@@ -84,5 +84,5 @@ function cellPhoneUse(planLimit, day, usage){
             console.log("You have exceeded your plan limit.");
         }
     }
-
+}
 cellPhoneUse();
