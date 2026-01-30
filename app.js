@@ -71,8 +71,18 @@ triangleType(2,3,1);
 // Exercise 5 Section
 console.log("EXERCISE 5:\n==========\n");
 
-function cellPhoneUse(){
+function cellPhoneUse(planLimit, day, usage){
+    let cycleDays = 30;
+    let currentAvg = usage / day;
 
-}
+    for(let i = day; i <= cycleDays; i++){
+        if(currentAvg)
+    }
+
+    if(usage === planLimit){
+        console.log("You have reached your plan limit.");
+    }else if(usage > planLimit){
+        console.log("You have exceeded your plan limit.");
+    }
 
 cellPhoneUse();
