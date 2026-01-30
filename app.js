@@ -76,13 +76,13 @@ function cellPhoneUse(planLimit, day, usage){
     let currentAvg = usage / day;
 
     for(let i = day; i <= cycleDays; i++){
-        if(currentAvg)
-    }
-
-    if(usage === planLimit){
+        if(currentAvg <= planLimit){
+            console.log(`You have ${i} days left on your plan.`);
+        }else if(usage === planLimit){
         console.log("You have reached your plan limit.");
-    }else if(usage > planLimit){
-        console.log("You have exceeded your plan limit.");
+        }else if(usage > planLimit){
+            console.log("You have exceeded your plan limit.");
+        }
     }
 
 cellPhoneUse();
