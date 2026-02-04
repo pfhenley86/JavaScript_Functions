@@ -102,16 +102,39 @@ console.log("EXERCISE 5:\n==========\n");
 
 function cellPhoneUse(planLimit, day, usage){
     let cycleDays = 30;
+    
+    let expectedDaily = planLimit / cycleDays;
     let currentAvg = usage / day;
 
-    for(let i = day; i <= cycleDays; i++){
-        if(currentAvg <= planLimit){
-            console.log(`You have ${i} days left on your plan.`);
-        }else if(usage === planLimit){
-        console.log("You have reached your plan limit.");
-        }else if(usage > planLimit){
-            console.log("You have exceeded your plan limit.");
-        }
+    const remainingData = planLimit - usage;
+    const remainingDays = cycleDays - day;
+
+
+    if(usage > planLimit){
+        console.log("You have exceeded your data plan limit.");
+        return;
     }
+    
+    if(remainingDays == 0){
+        console.log("Last day of the cycle. You have " + remainingData + " GB left.");
+        return;
+    }
+
+    const recommendedDaily = remainingData / remainingDays;
+    
+    if(currentAvg < expectedDaily){
+        console.log("You are using data too fast");
+    }else if(currentAvg < expectedDaily){
+        console.log("You are  using data slower than expected.");
+    }else{
+        console.log("You are exactly on track");
+    }
+
+    console.log("Data left: " + remainingData + " GB");
+    console.log("Days left: " + remainingDays + " days");
+    console.log("You should use no more than " + recommendedDaily.toFixed(2) + " GB/day to stay within your plan.");
 }
-cellPhoneUse();
+//cellPhoneUse(1000, 1, 800);
+//cellPhoneUse(1000, 29, 1500);
+cellPhoneUse(500, 15, 200);
+cellPhoneUse(800, 20, 500);
