@@ -50,24 +50,24 @@ function whichQuadrant(x,y){
         console.log("On The Y Axis");
     }
     else if(x > 0 && y > 0 ){
-        console.log("Quadrant 1");
+        console.log("Quadrant 1"); // Quadrant I (Top-Right): x is positive, y is positive
     }
-    else if(x > 0 && y < 0){
-        console.log("Quadrant 2");
+    else if(x < 0 && y > 0){
+        console.log("Quadrant 2"); // Quadrant II (Top-Left): x is negative, y is positive.
     }
     else if(x < 0 && y < 0){
-        console.log("Quadrant 3");
-    }else if(x < 0 && y > 0){
-        console.log("Quadrant 4");
+        console.log("Quadrant 3"); // Quadrant III (Bottom-Left): x is negative, y is negative
+    }else if(x > 0 && y < 0){
+        console.log("Quadrant 4"); // Quadrant IV (Bottom-Right): x is positive, y is negative
     }
 }
 whichQuadrant(0,0); //On The Origin
 whichQuadrant(-18,0); //On The X Axis
 whichQuadrant(0,25); //On The Y Axis
 whichQuadrant(18,25); // Quadrant 1
-whichQuadrant(19,-26); // Quadrant 2
+whichQuadrant(-19,26); // Quadrant 2
 whichQuadrant(-15,-35); // Quadrant 3
-whichQuadrant(-32,44); // Quadrant 4
+whichQuadrant(44,-32); // Quadrant 4
 
 console.log("\n==========\n");
 
