@@ -125,8 +125,8 @@ function cellPhoneUse(planLimit, day, usage){
     if(currentAvg > expectedDaily){
         console.log("You are using data too fast");
     }else if(currentAvg < expectedDaily){
-        console.log("You are  using data slower than expected.");
-    }else{
+        console.log("You are using data slower than expected.");
+    }else if(currentAvg == expectedDaily){
         console.log("You are exactly on track");
     }
 
@@ -134,7 +134,7 @@ function cellPhoneUse(planLimit, day, usage){
     console.log("Days left: " + remainingDays + " days");
     console.log("You should use no more than " + recommendedDaily.toFixed(2) + " GB/day to stay within your plan.");
 }
-//cellPhoneUse(1000, 1, 800);
-//cellPhoneUse(1000, 29, 1500);
-cellPhoneUse(500, 15, 200);
-cellPhoneUse(800, 20, 500);
+cellPhoneUse(1000, 1, 800); // You are using data too fast
+cellPhoneUse(1000, 29, 1500); //You have exceeded your data plan limit.
+cellPhoneUse(500, 15, 200); // You are using data slower than expected.
+cellPhoneUse(800, 18, 480); // You are exactly on track
