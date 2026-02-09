@@ -122,7 +122,7 @@ function cellPhoneUse(planLimit, day, usage){
 
     const recommendedDaily = remainingData / remainingDays;
     
-    if(currentAvg < expectedDaily){
+    if(currentAvg > expectedDaily){
         console.log("You are using data too fast");
     }else if(currentAvg < expectedDaily){
         console.log("You are  using data slower than expected.");
